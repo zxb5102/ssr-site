@@ -6,9 +6,9 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
+// function resolve (dir) {
+//   return path.join(__dirname, '..', dir)
+// }
 const webpackConfig = {
   devtool: isProd
     ? false
@@ -19,9 +19,12 @@ const webpackConfig = {
     filename: '[name].[chunkhash].js'
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'public': path.resolve(__dirname, '../public'),
-      '@': resolve('src'),
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, '../src'),
+      // '@': resolve('src'),
     }
   },
   module: {
@@ -64,6 +67,14 @@ const webpackConfig = {
             })
           : ['vue-style-loader', 'css-loader', 'less-loader']
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      }
     ]
   },
   performance: {
@@ -86,6 +97,6 @@ const webpackConfig = {
         new FriendlyErrorsPlugin()
       ]
 }
-const vuxLoader = require('vux-loader')
-const vuxConfig = require('./vux-config')
-module.exports = vuxLoader.merge(webpackConfig, vuxConfig)
+// const vuxLoader = require('vux-loader')
+// const vuxConfig = require('./vux-config')
+module.exports = webpackConfig

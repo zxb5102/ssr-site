@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
+const path = require('path');
 const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
@@ -10,7 +11,7 @@ const config = merge(base, {
   },
   resolve: {
     alias: {
-      'create-api': './create-api-client.js'
+      'create-api': './create-api-client.js',
     }
   },
   plugins: [

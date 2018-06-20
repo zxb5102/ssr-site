@@ -163,8 +163,8 @@ export default {
 };
 </script>
 <style>
-@import "viewerjs/dist/viewer.min.css";
-@import "swiper/dist/css/swiper.css";
+@import "../../../node_modules/viewerjs/dist/viewer.min.css";
+@import "../../../node_modules/swiper/dist/css/swiper.css";
 </style>
 
 <style lang="less" scoped>

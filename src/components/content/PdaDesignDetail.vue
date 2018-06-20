@@ -121,7 +121,7 @@
     };
 </script>
 <style>
-    @import "viewerjs/dist/viewer.min.css";
+    @import "../../../node_modules/viewerjs/dist/viewer.min.css";
 </style>
 
 <style scoped lang="less">

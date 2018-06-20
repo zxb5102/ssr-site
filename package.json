@@ -40,6 +40,7 @@
     "vue-iscroll-view": "^1.0.3"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.14.1",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

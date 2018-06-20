@@ -131,8 +131,5 @@ function dealData(remoteData) {
   return msg;
 }
 </script>
-<style>
-
-</style>
 
 

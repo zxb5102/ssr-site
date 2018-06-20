@@ -12,6 +12,7 @@
 </template>
 
 <script>
+var window = {};
   import Header from "@/components/Header";
   import Footer from "@/components/Footer";
   import $ from "jquery";

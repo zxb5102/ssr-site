@@ -6,7 +6,10 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
 
-module.exports = {
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+const webpackConfig = {
   devtool: isProd
     ? false
     : '#cheap-module-source-map',
@@ -17,7 +20,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'public': path.resolve(__dirname, '../public')
+      'public': path.resolve(__dirname, '../public'),
+      '@': resolve('src'),
     }
   },
   module: {
@@ -82,3 +86,6 @@ module.exports = {
         new FriendlyErrorsPlugin()
       ]
 }
+const vuxLoader = require('vux-loader')
+const vuxConfig = require('./vux-config')
+module.exports = vuxLoader.merge(webpackConfig, vuxConfig)

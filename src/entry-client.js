@@ -1,6 +1,13 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import 'es6-promise/auto'
 import { createApp } from './app'
+
+
+import './main.css'
+import 'element-ui/lib/theme-chalk/icon.css';
+import 'element-ui/lib/theme-chalk/display.css';
+import 'element-ui/lib/theme-chalk/alert.css';
+'@ElementUI'
 // import ProgressBar from './components/ProgressBar.vue'
 
 // global progress bar

@@ -38,33 +38,38 @@
 </template>
 
 <script>
-import testData from "../../testData.js";
-import $ from "jquery";
-var axios = require("axios");
-var MockAdapter = require("axios-mock-adapter");
-import { bus } from "../../util";
+// import $ from "jquery";
+// var axios = require("axios");
+// var MockAdapter = require("axios-mock-adapter");
+// import { bus } from "../../util";
 export default {
+  asyncData({store}){
+    // console.log('start async data');
+    store.dispatch('GET_PROFESSION_FIELD_DATA');
+  },
   data() {
     return {
       small: false,
       tabPosition: "left",
-      pro: [],
       total: 50,
       pageSize: 5,
       currentPage: 1,
       background: true
     };
   },
+  computed:{
+    pro(){
+      return this.$store.state.pro; 
+    }
+  },
   methods: {
     currentChange: function(currentPage) {
       this.currentPage = currentPage;
     }
   },
+  // created(){
+  // },
   mounted() {
-    if (ISDEV) {
-      var mock = new MockAdapter(axios);
-      mock.onPost("/Home/GetProfessionFieldData").reply(200, testData.protest);
-    }
 
     $(document).ready(() => {
       var id = this.$route.query.id;
@@ -78,54 +83,6 @@ export default {
     });
     // axios get remote data
 
-    axios({
-      method: "post",
-      url: "/Home/GetProfessionFieldData",
-      data: {}
-    })
-      .then(resp => {
-        var data = resp.data;
-        var map = new Map();
-        for (var item of data.ProType) {
-          map.set(item.Id, {
-            name: item.TypeName,
-            content: []
-          });
-        }
-        for (var item of data.Profession) {
-          var site = "http://cyy.zhcjjs.com";
-          var id = item.TypeId;
-          var mapItem = map.get(id);
-          if (mapItem) {
-            var ary = mapItem.content;
-
-            var paths = item.ProductPaths;
-            var pary = paths.split(";");
-            var src = pary[0].replace("../..", site);
-            var tobj = {};
-            tobj["src"] = src;
-            tobj["logo"] = item.CompanyLogo.replace("../..", site);
-            tobj["title"] = item.CompanyName;
-            tobj["desc"] = item.CompanyDescription;
-            tobj["phone"] = item.CompanyPhone;
-            tobj["address"] = item.CompanyAddress;
-            tobj["link"] = "/designDetail?companyId=" + item.CompanyId;
-
-            ary.push(tobj);
-          }
-        }
-
-        var result = [];
-        var all = Array.from(map.values());
-
-        for (var value of all) {
-          result.push(value);
-        }
-        this.pro = result;
-      })
-      .catch(error => {
-        console.log(error);
-      });
   }
 };
 function windowSizeChange() {

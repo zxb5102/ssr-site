@@ -11,7 +11,8 @@ export function createStore () {
   return new Vuex.Store({
     state: {
       info:'',
-      dataList:[]
+      dataList:[],
+      pro:[]
     },
     actions,
     mutations,

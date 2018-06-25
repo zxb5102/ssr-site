@@ -4,5 +4,8 @@ export default {
   },
   GET_DATA:(state) => {
     state.dataList = [1,2,3,4,5,6];
+  },
+  SET_PROFESSION_FIELD_DATA:(state,pro)=>{
+    state.pro = pro;
   }
 };

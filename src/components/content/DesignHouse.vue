@@ -68,7 +68,7 @@
 <script>
 import testData from "../../testData.js";
 import { bus } from "../../util";
-import $ from "jquery";
+// import $ from "jquery";
 export default {
   data() {
     return {

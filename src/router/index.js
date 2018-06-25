@@ -32,6 +32,7 @@ Vue.use(Router)
 export function createRouter() {
   const router = new Router({
     scrollBehavior: () => ({ y: 0 }),
+    mode:'history',
     routes: [
       {
         path: '/index',

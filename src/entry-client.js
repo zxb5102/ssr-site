@@ -4,31 +4,31 @@ import { createApp } from './app'
 
 
 import './main.css'
-import 'element-ui/lib/theme-chalk/icon.css';
-import 'element-ui/lib/theme-chalk/display.css';
-import 'element-ui/lib/theme-chalk/alert.css';
+// import 'element-ui/lib/theme-chalk/icon.css';
+// import 'element-ui/lib/theme-chalk/display.css';
+// import 'element-ui/lib/theme-chalk/alert.css';
 // '@ElementUI'
-import 'element-ui/lib/theme-chalk/input.css';
-import input from 'element-ui/lib/input';
-Vue.component(input.name,input);
-import 'element-ui/lib/theme-chalk/button.css';
-import button from 'element-ui/lib/button';
-Vue.component(button.name,button);
-import 'element-ui/lib/theme-chalk/collapse.css';
-import collapse from 'element-ui/lib/collapse';
-Vue.component(collapse.name,collapse);
-import 'element-ui/lib/theme-chalk/collapse-item.css';
-import collapseItem from 'element-ui/lib/collapse-item';
-Vue.component(collapseItem.name,collapseItem);
-import 'element-ui/lib/theme-chalk/table.css';
-import table from 'element-ui/lib/table';
-Vue.component(table.name,table);
-import 'element-ui/lib/theme-chalk/table-column.css';
-import tableColumn from 'element-ui/lib/table-column';
-Vue.component(tableColumn.name,tableColumn);
-import 'element-ui/lib/theme-chalk/dialog.css';
-import dialog from 'element-ui/lib/dialog';
-Vue.component(dialog.name,dialog);
+// import 'element-ui/lib/theme-chalk/input.css';
+// import input from 'element-ui/lib/input';
+// Vue.component(input.name,input);
+// import 'element-ui/lib/theme-chalk/button.css';
+// import button from 'element-ui/lib/button';
+// Vue.component(button.name,button);
+// import 'element-ui/lib/theme-chalk/collapse.css';
+// import collapse from 'element-ui/lib/collapse';
+// Vue.component(collapse.name,collapse);
+// import 'element-ui/lib/theme-chalk/collapse-item.css';
+// import collapseItem from 'element-ui/lib/collapse-item';
+// Vue.component(collapseItem.name,collapseItem);
+// import 'element-ui/lib/theme-chalk/table.css';
+// import table from 'element-ui/lib/table';
+// Vue.component(table.name,table);
+// import 'element-ui/lib/theme-chalk/table-column.css';
+// import tableColumn from 'element-ui/lib/table-column';
+// Vue.component(tableColumn.name,tableColumn);
+// import 'element-ui/lib/theme-chalk/dialog.css';
+// import dialog from 'element-ui/lib/dialog';
+// Vue.component(dialog.name,dialog);
 // import ProgressBar from './components/ProgressBar.vue'
 
 // global progress bar

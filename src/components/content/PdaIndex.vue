@@ -206,7 +206,9 @@
 <script>
 import testData from "@/testData.js";
 import $ from "jquery";
-import IScroll from "iscroll";
+const iscollInit = require("iscroll");
+// import aa from './aaa.js'
+// import IScroll from "iscroll";
 export default {
   props: ["prod", "news", "designer", "company"],
   data() {
@@ -214,6 +216,8 @@ export default {
   },
   methods: {},
   mounted() {
+    var IScroll = iscollInit.iscollInit();
+    // aa();
     var myScroll = new IScroll("#wrapper", {
       scrollX: true,
       scrollY: false,

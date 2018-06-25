@@ -152,18 +152,11 @@ export default {
     return {
       isLogin: false,
       userName: "",
-      dev:ISDEV,
-      isPda:false,
+      dev: true,
+      isPda: false
     };
   },
-  created(){
-    var windowWidth = document.documentElement.clientWidth;
-    if(windowWidth < 992){
-      this.isPda = true;
-    }else{
-      this.isPda = false;
-    }
-  },
+  created() {},
   methods: {
     fitNavBar: fitNavBar,
     //控制 导航条的点击
@@ -213,9 +206,15 @@ export default {
     }
   },
   mounted: function() {
+    var windowWidth = document.documentElement.clientWidth;
+    if (windowWidth < 992) {
+      this.isPda = true;
+    } else {
+      this.isPda = false;
+    }
     //登入后触发重新获取用户的信息
     bus.$on("login", () => {
-      if (ISDEV) {
+      if (true) {
         var mock = new MockAdapter(axios);
         mock.onPost("/Account/GetInfo").reply(200, userInfo);
         // console.log(userInfo);
@@ -263,7 +262,7 @@ export default {
       });
     });
 
-    if (ISDEV) {
+    if (true) {
       var mock = new MockAdapter(axios);
       mock.onPost("/Account/GetInfo").reply(200, userInfo);
       // console.log(userInfo);

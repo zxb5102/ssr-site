@@ -4,7 +4,7 @@
             <el-carousel indicator-position="outside" :height="carouselHeight" :autoplay="autoplay" trigger="click" :type="type" :options="{preventDefault: false}">
                 <el-carousel-item v-for="item in indexTopImgs" :key="item.img">
                     <a :href="item.link" class="top-a-img">
-                        <img onload="autoFit(this)" :src="item.img" alt="" />
+                        <img onload="autoFit(this);" :src="item.img" alt="" />
                         <!-- <img onload="alert()" :src="item.img" alt="" /> -->
                         <!-- <img :src="item.img" alt="" /> -->
                     </a>
@@ -23,8 +23,18 @@ import testData from "@/testData.js";
 // import IScroll from 'iscroll';
 import PdaIndex from "./PdaIndex";
 import PcIndex from "./PcIndex";
-import $ from "jquery";
-import { autoFit } from "../../util";
+// import $ from "jquery";
+// import { autoFit } from "../../util";
+// import {
+//   fitImg,
+//   autoFit,
+//   autoFitWrapImg,
+//   cacheFit,
+//   proFitImg,
+//   designerHouseFitImg,
+//   newsFitImgForCommon,
+//   newsFitImgForBig
+// } from "../../util.js";
 export default {
   data() {
     return {
@@ -39,6 +49,16 @@ export default {
       scale: 1040 / 248
     };
   },
+  //   beforeMount() {
+  //   window.fitImg = fitImg;
+  //   window.autoFit = autoFit;
+  //   window.autoFitWrapImg = autoFitWrapImg;
+  //   window.cacheFit = cacheFit;
+  //   window.newsFitImgForCommon = newsFitImgForCommon;
+  //   window.newsFitImgForBig = newsFitImgForBig;
+  //   window.designerHouseFitImg = designerHouseFitImg;
+  //   window.proFitImg = proFitImg;
+  // },
   methods: {},
   components: {
     PdaIndex,

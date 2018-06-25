@@ -11,8 +11,8 @@
             <el-col :span="16">
                 <div class="wrap-entry-img">
                     <img src="../../assets/pcindex/1.jpg" alt="" onload="autoFitWrapImg(this)">
-                    <router-link tag="a" :to="{path:'/infoIntro'}">
                         <div class="white-blank">
+                        <router-link tag="div" :to="{path:'/infoIntro'}">
                             <div class="text-desc">
                                 <a>
                                     中航长江（武汉）设计师产业园即将开园，敬请期待
@@ -23,8 +23,8 @@
                                     详情请点击查看
                                 </a>
                             </div>
+                        </router-link>
                         </div>
-                    </router-link>
                 </div>
             </el-col>
             <!-- 专业领域 -->

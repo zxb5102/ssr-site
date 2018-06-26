@@ -103,9 +103,11 @@ function render (req, res) {
     }
   }
 
+  const isPda = req.get('User-Agent').indexOf('Windows') !== -1 ? false : true ;
   const context = {
     title: 'test-example', // default title
-    url: req.url
+    url: req.url,
+    isPda:isPda
   }
   renderer.renderToString(context, (err, html) => {
     if (err) {

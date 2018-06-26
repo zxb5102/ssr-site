@@ -95,12 +95,6 @@ export default {
   //   window.proFitImg = proFitImg;
   // },
   mounted() {
-    var hml = document.documentElement;
-    hml.style.fontSize = hml.clientWidth / 750 * 100 + "px";
-    $(window).resize(() => {
-      var hml = document.documentElement;
-      hml.style.fontSize = hml.clientWidth / 750 * 100 + "px";
-    });
   }
 };
 </script>

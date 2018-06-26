@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
   <link rel="shortcut icon" sizes="48x48" href="/public/logo-48.png">
   <meta name="theme-color" content="#f60">
+
   <link rel="manifest" href="/manifest.json">
 </head>
 <style>
@@ -19,12 +20,27 @@
   .wrap-text {
     -webkit-box-orient: vertical;
   }
+  ul{
+      padding:0px;
+  }
+  figure{
+      display: block;
+      margin:0px;
+  }
 </style>
 </head>
 
 <body>
   <!-- <script src="/polyfill.min.js"></script> -->
   <script src="./static/jquery.min.js"></script>
+  <script>
+        var hml = document.documentElement;
+        hml.style.fontSize = hml.clientWidth / 750 * 100 + "px";
+        $(window).resize(() => {
+          var hml = document.documentElement;
+          hml.style.fontSize = hml.clientWidth / 750 * 100 + "px";
+        });
+  </script>
   <script>
      function fitImg(t, i, e) {
     // console.log(e);
@@ -57,15 +73,18 @@
     var width = document.documentElement.clientWidth;
     var height = $(self).closest(".el-carousel__container").height();
     //  console.log(height);
+    // debugger;
     fitImg(self, height, width);
     // }
 }
 
  function autoFitWrapImg(self) {
+    //  debugger;
     // self.style = "";
     self.removeAttribute("style");
     var wrapImg = $(self).closest(".wrap-img");
     if (wrapImg.length != 0) {
+        // debugger;
         var width = wrapImg.width();
         var height = wrapImg.height();
         fitImg(self, height, width);

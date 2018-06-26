@@ -38,7 +38,7 @@ import PcIndex from "./PcIndex";
 export default {
   data() {
     return {
-      carouselHeight: "450px",
+      carouselHeight: this.$store.state.isPda ? "150px" : "450px",
       indexTopImgs: testData.indexTopImgs,
       prod: testData.prod,
       company: testData.company,
@@ -70,9 +70,11 @@ export default {
     //     // this.type = "card";
     //     height = 150;
     // }
-    if (document.documentElement.clientWidth < 992) {
-      this.carouselHeight = "150px";
-    }
+
+    // if (document.documentElement.clientWidth < 992) {
+    //   this.carouselHeight = "150px";
+    // }
+
     // $(window).resize(() => {
     //     var height = document.documentElement.clientWidth / this.scale;
     //     this.carouselHeight = height + "px";

@@ -9,6 +9,9 @@ export default {
   GET_DATA: ({ commit }) => {
     commit("GET_DATA");
   },
+  CHANGE_AGENT_FLAG:({commit},payload)=>{
+    commit('CHANGE_AGENT_FLAG',payload);
+  },
   GET_PROFESSION_FIELD_DATA: ({ commit }) => {
     // if (true) {
       var mock = new MockAdapter(axios);

@@ -12,7 +12,8 @@ export function createStore () {
     state: {
       info:'',
       dataList:[],
-      pro:[]
+      pro:[],
+      isPda:false,
     },
     actions,
     mutations,

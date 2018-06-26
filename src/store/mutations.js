@@ -7,5 +7,8 @@ export default {
   },
   SET_PROFESSION_FIELD_DATA:(state,pro)=>{
     state.pro = pro;
+  },
+  CHANGE_AGENT_FLAG:(state,payload)=>{
+    state.isPda = payload.value;
   }
 };

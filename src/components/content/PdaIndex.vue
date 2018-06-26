@@ -372,8 +372,10 @@ export default {
     align-items: center;
     li {
       width: 2.45rem;
+    // width:150px;
       padding: 0px;
       .wrap-img {
+            //   width:150px;
         height: 2.45rem;
         border: 1px solid #c5c0c0;
       }

@@ -62,12 +62,12 @@
               <div class="sub-menu">
                 <ul>
                   <li>
-                    <a href="/Contract/List" target="_blank">合同审批</a>
+                    <a href="http://cyy.zhcjjs.com:87/Contract/List" target="_blank">合同审批</a>
                   </li>
                   <li>
-                    <a href="/static/backstage.html" v-if="dev">个人中心</a>
-                    <a href="/static/backstagePda.html" v-else-if="isPda">个人中心</a>
-                    <a href="/static/backstage.html" v-else>个人中心</a>
+                    <a href="http://cyy.zhcjjs.com:87/static/backstage.html" v-if="dev">个人中心</a>
+                    <a href="http://cyy.zhcjjs.com:87/static/backstagePda.html" v-else-if="isPda">个人中心</a>
+                    <a href="http://cyy.zhcjjs.com:87/static/backstage.html" v-else>个人中心</a>
                   </li>
                 </ul>
               </div>
@@ -80,9 +80,9 @@
         <div class="welcome" v-if="isLogin">
           <div>
             <!-- <router-link to="/entry/login">登入/注册</router-link> -->
-            <a href="/static/backstage.html" v-if="dev">你好，{{userName}}</a>
-            <a href="/static/backstagePda.html" v-else-if="isPda">你好，{{userName}}</a>
-            <a href="/static/backstage.html" v-else>你好，{{userName}}</a>
+            <a href="http://cyy.zhcjjs.com:87/static/backstage.html" v-if="dev">你好，{{userName}}</a>
+            <a href="http://cyy.zhcjjs.com:87/static/backstagePda.html" v-else-if="isPda">你好，{{userName}}</a>
+            <a href="http://cyy.zhcjjs.com:87/static/backstage.html" v-else>你好，{{userName}}</a>
             <a @click="logOut" class="logOut">注销</a>
           </div>
         </div>

@@ -41,17 +41,17 @@ export function createRouter() {
       },
       {
         path: '/pdaInfoIntro',
-        name: 'index',
+        name: 'pdaInfoIntro',
         component: pdaInfoIntro
       },
       {
         path: '/entryForm',
-        name: 'index',
+        name: 'EntryForm',
         component: EntryForm
       },
       {
         path: '/infoIntro',
-        name: 'index',
+        name: 'InfoIntro',
         component: InfoIntro
       },
       {
@@ -80,7 +80,7 @@ export function createRouter() {
       },
       {
         path: '/entry',
-        name: 'entry',
+        // name: 'entry',
         component: Entry,
         children: [
           {
@@ -89,12 +89,12 @@ export function createRouter() {
           },
           {
             path: 'login',
-            name: 'entry',
+            name: 'login',
             component: Login
           },
           {
             path: 'register',
-            name: 'entry',
+            name: 'register',
             component: Register
           }
         ]
@@ -106,15 +106,15 @@ export function createRouter() {
       },
       {
         path: '/designDetail',
-        name: 'designHouse',
+        name: 'designDetail',
         component: DesignDetail
       }, {
         path: '/pcDesignDetail',
-        name: 'designHouse',
+        name: 'pcDesignDetail',
         component: PcDesignDetail
       }, {
         path: '/pdaDesignDetail',
-        name: 'designHouse',
+        name: 'pdaDesignDetail',
         component: PdaDesignDetail
       }
     ],

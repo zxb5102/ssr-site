@@ -34,6 +34,7 @@ var serverProxy = proxy(proxyOptions);
 
 const app = express()
 app.use('/api', serverProxy);
+// app.use('**/*.html',serverProxy);
 
 function createRenderer (bundle, options) {
   // https://github.com/vuejs/vue/blob/dev/packages/vue-server-renderer/README.md#why-use-bundlerenderer

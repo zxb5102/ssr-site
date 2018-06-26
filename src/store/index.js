@@ -14,6 +14,7 @@ export function createStore () {
       dataList:[],
       pro:[],
       isPda:false,
+      isDev:false,
     },
     actions,
     mutations,

@@ -191,7 +191,7 @@ export default {
       this.clearAllCookie();
       axios({
         method: "post",
-        url: "/Account/LogOff",
+        url: "/api/Account/LogOff",
         data: {}
       })
         .then(resp => {})
@@ -214,9 +214,9 @@ export default {
     }
     //登入后触发重新获取用户的信息
     bus.$on("login", () => {
-      if (true) {
+      if (this.$store.state.isDev) {
         var mock = new MockAdapter(axios);
-        mock.onPost("/Account/GetInfo").reply(200, userInfo);
+        mock.onPost("/api/Account/GetInfo").reply(200, userInfo);
         // console.log(userInfo);
       }
       getUserInfo.bind(this)();
@@ -262,9 +262,9 @@ export default {
       });
     });
 
-    if (true) {
+    if (this.$store.state.isDev) {
       var mock = new MockAdapter(axios);
-      mock.onPost("/Account/GetInfo").reply(200, userInfo);
+      mock.onPost("/api/Account/GetInfo").reply(200, userInfo);
       // console.log(userInfo);
     }
     getUserInfo.bind(this)();
@@ -273,7 +273,7 @@ export default {
 function getUserInfo() {
   axios({
     method: "post",
-    url: "/Account/GetInfo"
+    url: "/api/Account/GetInfo"
     // data: {}
   })
     .then(resp => {

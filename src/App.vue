@@ -1,6 +1,6 @@
 <template>
-  <div class="wrap-outer" id="app">
-    <div >
+  <div class="wrap-outer" id="app" style="min-height:100vh">
+    <div>
       <!-- header部分 -->
       <Header/>
       <!-- 路由部分 -->
@@ -62,11 +62,23 @@ Vue.component(tabs.name, tabs);
 import "element-ui/lib/theme-chalk/tab-pane.css";
 import tabPane from "element-ui/lib/tab-pane";
 Vue.component(tabPane.name, tabPane);
+import "element-ui/lib/theme-chalk/form.css";
+import form from "element-ui/lib/form";
+Vue.component(form.name, form);
+import "element-ui/lib/theme-chalk/form-item.css";
+import formItem from "element-ui/lib/form-item";
+Vue.component(formItem.name, formItem);
+import "element-ui/lib/theme-chalk/switch.css";
+import Switch from "element-ui/lib/switch";
+Vue.component(Switch.name, Switch);
+import "element-ui/lib/theme-chalk/cascader.css";
+import cascader from "element-ui/lib/cascader";
+Vue.component(cascader.name, cascader);
 
 // var window = {};
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import $ from "jquery";
+// import $ from "jquery";
 // import {
 //   fitImg,
 //   autoFit,
@@ -94,8 +106,8 @@ export default {
   //   window.designerHouseFitImg = designerHouseFitImg;
   //   window.proFitImg = proFitImg;
   // },
-  mounted() {
-  }
+  // mounted() {
+  // }
 };
 </script>
 

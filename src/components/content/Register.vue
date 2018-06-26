@@ -58,7 +58,7 @@
             <el-tab-pane label="设计师" name="designer">
                 <el-form :model="designerForm" label-width="0px" :rules="rules" ref="designerForm">
                     <el-form-item label="" prop="houses" :error="cascaderError">
-                        <el-cascader @focus="cascaderFocus" @active-item-change="handleItemChange" v-model="designerForm.houses" @blur="cascaderBlur" :show-all-levels="false" placeholder="设计所名称" :options="options" size="100%"></el-cascader>
+                        <el-cascader @focus="cascaderFocus" @active-item-change="handleItemChange" v-model="designerForm.houses" @blur="cascaderBlur" :show-all-levels="false" placeholder="设计所名称" :options="options" size="100%" style="width:100%"></el-cascader>
                     </el-form-item>
                     <el-form-item label="" prop="user" :error="userError">
                         <el-input placeholder="用户名" prefix-icon="user" v-model="designerForm.user">

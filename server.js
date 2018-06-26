@@ -7,6 +7,7 @@ const compression = require('compression')
 const microcache = require('route-cache')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
+const proxy = require('http-proxy-middleware');
 
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
@@ -14,7 +15,25 @@ const serverInfo =
   `express/${require('express/package.json').version} ` +
   `vue-server-renderer/${require('vue-server-renderer/package.json').version}`
 
+const proxyOptions = {
+    target: 'http://cyy.zhcjjs.com', // target host
+    changeOrigin: true,               // needed for virtual hosted sites
+    ws: true,                         // proxy websockets
+    pathRewrite: {
+        '^/api' : '',     // rewrite path
+    },
+    router: {
+        // when request.headers.host == 'dev.localhost:3000',
+        // override target 'http://www.example.org' to 'http://localhost:8000'
+        // 'dev.localhost:3000' : 'http://localhost:8000'
+    }
+};
+
+// create the proxy (without context)
+var serverProxy = proxy(proxyOptions);
+
 const app = express()
+app.use('/api', serverProxy);
 
 function createRenderer (bundle, options) {
   // https://github.com/vuejs/vue/blob/dev/packages/vue-server-renderer/README.md#why-use-bundlerenderer

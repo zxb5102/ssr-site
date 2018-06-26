@@ -40,8 +40,8 @@
     "vue-iscroll-view": "^1.0.3"
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.14.1",
     "autoprefixer": "^7.1.6",
+    "axios-mock-adapter": "^1.14.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -50,6 +50,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "http-proxy-middleware": "^0.18.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "rimraf": "^2.6.2",

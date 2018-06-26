@@ -13,7 +13,7 @@
       <section>
         <div>
           <p>赣ICP备14007784号-1 © 2017 zhcjjs.com</p>
-          <p>©中航长江建设工程有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信部设计开发</p>
+          <p>©中航长江建设工程有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息部设计开发</p>
         </div>
         <!-- <p class="company">中航长江建设工程有限公司</p> -->
       </section>

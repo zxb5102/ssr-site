@@ -43,7 +43,7 @@
 
 <script>
 import { bus } from "../../util";
-import $ from "jquery";
+// import $ from "jquery";
 var axios = require("axios");
 var MockAdapter = require("axios-mock-adapter");
 export default {
@@ -77,9 +77,9 @@ export default {
     };
   },
   mounted() {
-    if (ISDEV) {
+    if (this.$store.isDev) {
       var mock = new MockAdapter(axios);
-      mock.onPost("/Account/AjaxLogin").reply(200, {
+      mock.onPost("/api/Account/AjaxLogin").reply(200, {
         code: 0,
         msg: "账号或是密码错误"
         // code:0
@@ -100,7 +100,7 @@ export default {
         if (valid) {
           axios({
             method: "post",
-            url: "/Account/AjaxLogin",
+            url: "/api/Account/AjaxLogin",
             data: {
               UserName: this.ruleForm.user,
               Password: this.ruleForm.pwd,

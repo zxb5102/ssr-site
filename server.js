@@ -88,7 +88,7 @@ const serve = (path, cache) => express.static(resolve(path), {
 })
 
 app.use(compression({ threshold: 0 }))
-app.use(favicon('./public/logo-48.png'))
+// app.use(favicon('./public/logo-48.png'))
 app.use('/dist', serve('./dist', true))
 app.use('/public', serve('./public', true))
 app.use('/static', serve('./src/static', true))
@@ -125,7 +125,7 @@ function render (req, res) {
 
   const isPda = req.get('User-Agent').indexOf('Windows') !== -1 ? false : true ;
   const context = {
-    title: 'test-example', // default title
+    title: '中航长江设计师产业园', // default title
     url: req.url,
     isPda:isPda
   }
@@ -144,7 +144,7 @@ app.get('*', isProd ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3000 
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })
